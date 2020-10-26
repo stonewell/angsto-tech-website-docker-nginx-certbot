@@ -92,10 +92,10 @@ options_ssl_nginx="https://raw.githubusercontent.com/certbot/certbot/master/cert
 ssl_dhparams="https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem"
 
 # root required
-if [ "$EUID" -ne 0 ]; then
-	echo; echo "[✘] Error: Please run $0 as root!"; echo;
-	exit
-fi
+#if [ "$EUID" -ne 0 ]; then
+#	echo; echo "[✘] Error: Please run $0 as root!"; echo;
+#	exit
+#fi
 
 clear
 
