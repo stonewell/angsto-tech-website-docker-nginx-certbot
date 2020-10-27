@@ -1,11 +1,11 @@
 # docker-compose.yml by Vic Shóstak <truewebartisans@gmail.com> (https://1wa.co)
 
-# version: "3.8"
+version: "3.8"
 
 services:
   nginx:
     container_name: nginx
-    image: nginx:alpine
+    image: nginxinc/nginx-unprivileged:mainline-alpine-amd64
     networks:
       - nginx_net
     volumes:
@@ -14,7 +14,8 @@ services:
       - ./webserver/certbot/conf:/etc/letsencrypt
       - ./webserver/certbot/www:/var/www/certbot
     ports:
-      - 80:80
+      - 80:8080/tcp
+      - 443:8443/tcp
     restart: unless-stopped
     command: /bin/sh -c "while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g 'daemon off;'"
 
