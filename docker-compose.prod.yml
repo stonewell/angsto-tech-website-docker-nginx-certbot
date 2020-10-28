@@ -7,8 +7,11 @@ services:
     volumes:
       - ${HOME}/site/gallery.angsto-tech.com:/gallery/:ro
       - ${HOME}/site/angsto-tech.com:/usr/share/nginx/html/:ro
+      - ${HOME}/site/stone.angsto-tech.com:/stone/:ro
       - ./webserver/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./webserver/nginx/angsto-tech.com.conf:/etc/nginx/sites-enabled/angsto-tech.com.conf # change angsto-tech.com (!)
+      - ./webserver/nginx/angsto-tech.com.conf:/etc/nginx/sites-enabled/angsto-tech.com.conf
+      - ./webserver/nginx/gallery.angsto-tech.com.conf:/etc/nginx/sites-enabled/gallery.angsto-tech.com.conf
+      - ./webserver/nginx/stone.angsto-tech.com.conf:/etc/nginx/sites-enabled/stone.angsto-tech.com.conf
       - ./webserver/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./webserver/certbot/conf:/etc/letsencrypt
       - ./webserver/certbot/www:/var/www/certbot
