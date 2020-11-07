@@ -12,6 +12,7 @@ services:
       - ./webserver/nginx/angsto-tech.com.conf:/etc/nginx/sites-enabled/angsto-tech.com.conf
       - ./webserver/nginx/gallery.angsto-tech.com.conf:/etc/nginx/sites-enabled/gallery.angsto-tech.com.conf
       - ./webserver/nginx/stone.angsto-tech.com.conf:/etc/nginx/sites-enabled/stone.angsto-tech.com.conf
+      - ./webserver/nginx/chat.angsto-tech.com.conf:/etc/nginx/sites-enabled/chat.angsto-tech.com.conf
       - ./webserver/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./webserver/certbot/conf:/etc/letsencrypt
       - ./webserver/certbot/www:/var/www/certbot
